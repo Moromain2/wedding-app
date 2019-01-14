@@ -13,6 +13,7 @@
   <% end %>
   <% if current_page?(action: 'edit') %>
     <%= f.submit 'Mettre à Jour' %>
+    <%= link_to 'Effacer', @post, method: :delete, data: {confirm: 'Veux tu vraiment effacer ce post ?'} %>
   <% end %>
 
 <% end %>

@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :hebergements
+  get 'hebergements/new'
+  get 'hebergements/create'
+  get 'hebergements/edit'
+  get 'hebergements/update'
+  get 'hebergements/show'
+  get 'hebergements/index'
+  get 'hebergements/destroy'
   resources :posts
   get 'posts/new'
   get 'posts/create'

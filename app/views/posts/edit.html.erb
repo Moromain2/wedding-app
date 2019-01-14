@@ -1,5 +1,3 @@
 <h1>Modfier <%= @post.title %></h1>
 
 <%= render 'posts/partials/post_form' %>
-
-<%= link_to 'Effacer', @post, method: :delete, data: {confirm: 'Veux tu vraiment effacer ce post ?'} %>

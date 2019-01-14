@@ -1,0 +1,12 @@
+<h1><%= @hebergement.title %></h1>
+<p><%= @hebergement.description %></p>
+
+<ul>
+  <li><%= @hebergement.adress %></li>
+  <li><%= @hebergement.city %></li>
+  <li><%= @hebergement.zipcode %></li>
+  <li><%= @hebergement.phonenumber %></li>
+  <% if @hebergement.website? %>
+    <li><%= link_to 'Site Web', "#{@hebergement.website}", target: "_blank" %></li>
+  <% end %>
+</ul>

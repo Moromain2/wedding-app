@@ -1,0 +1,39 @@
+<%= form_for @hebergement do |f| %>
+
+  <%= f.label :title, 'Nom' %><br>
+  <%= f.text_field :title %><br>
+  <br>
+
+  <%= f.label :description, 'Description' %><br>
+  <%= f.text_area :description %><br>
+  <br>
+
+  <%= f.label :adress, 'Adresse' %><br>
+  <%= f.text_field :adress %><br>
+  <br>
+
+  <%= f.label :city, 'Ville' %><br>
+  <%= f.text_field :city %><br>
+  <br>
+
+  <%= f.label :zipcode, 'Code Postal' %><br>
+  <%= f.text_field :zipcode %><br>
+  <br>
+
+  <%= f.label :phonenumber, 'Numéro de téléphone' %><br>
+  <%= f.text_field :phonenumber %><br>
+  <br>
+
+  <%= f.label :website, 'Site Web' %><br>
+  <%= f.text_field :website %><br>
+  <br>
+
+  <% if current_page?(action: 'new') %>
+    <%= f.submit 'Ajouter' %>
+  <% end %>
+  <% if current_page?(action: 'edit') %>
+    <%= f.submit 'Mettre à Jour' %>
+    <%= link_to 'Effacer', @hebergement, method: :delete, data: {confirm: 'Veux tu vraiment effacer cet hébergement ?'} %>
+  <% end %>
+
+<% end %>
