@@ -1,18 +1,19 @@
 <h1>Tous les contacts</h1>
 
 <% if @contacts.any? %>
-  <ul>
   <% @contacts.each do |contact| %>
+    <% if contact.avatar.attached? %>
+      <%= image_tag(contact.avatar) %>
+    <% end %>
     <h2><%= contact.firstname %> <%= contact.lastname %></h2>
     <em><%= contact.role %></em>
     <ul>
       <li><%= link_to "#{contact.phonenumber}", "tel:#{contact.phonenumber}" %></li>
       <% if contact.email? %>
-        <li><%= mail_to "#{contact.email}", "Envoyer un mail" %></li>
+        <li><%= mail_to "#{contact.email}", "Envoyer un mail à #{contact.firstname}" %></li>
       <% end %>
     </ul>
   <% end %>
-  </ul>
 <% else %>
   <h4>Pas encore de contact pour le moment, ça arrive vite 😉</h4>
 <% end %>
