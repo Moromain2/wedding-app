@@ -43,7 +43,7 @@ class HebergementsController < ApplicationController
 
   private
   def hebergement_params
-    params.require(:hebergement).permit(:title, :description, :adress, :city, :zipcode, :phonenumber, :website)
+    params.require(:hebergement).permit(:title, :description, :adress, :city, :zipcode, :phonenumber, :email, :website)
   end
 
 end

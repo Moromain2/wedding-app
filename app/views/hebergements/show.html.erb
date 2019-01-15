@@ -5,8 +5,11 @@
   <li><%= @hebergement.adress %></li>
   <li><%= @hebergement.city %></li>
   <li><%= @hebergement.zipcode %></li>
-  <li><%= @hebergement.phonenumber %></li>
+  <li><%= link_to "#{@hebergement.phonenumber}", "tel:#{@hebergement.phonenumber}" %></li>
+  <% if @hebergement.email? %>
+    <li><%= mail_to "#{@hebergement.email}", "Envoyer un mail" %></li>
+  <% end %>
   <% if @hebergement.website? %>
-    <li><%= link_to 'Site Web', "#{@hebergement.website}", target: "_blank" %></li>
+    <li><%= link_to "Site Web", "#{@hebergement.website}", target: "_blank" %></li>
   <% end %>
 </ul>
