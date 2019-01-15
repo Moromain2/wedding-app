@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
+  resources :evenements
+  get 'evenements/new'
+  get 'evenements/edit'
+  get 'evenements/show'
+  get 'evenements/index'
+
   resources :liste_de_mariages
   get 'liste_de_mariages/new'
   get 'liste_de_mariages/edit'
-  get 'liste_de_mariages/show'
   get 'liste_de_mariages/index'
 
   resources :contacts
   get 'contacts/new'
   get 'contacts/edit'
-  get 'contacts/show'
   get 'contacts/index'
 
   resources :hebergements
@@ -16,7 +20,7 @@ Rails.application.routes.draw do
   get 'hebergements/edit'
   get 'hebergements/show'
   get 'hebergements/index'
-  
+
   resources :posts
   get 'posts/new'
   get 'posts/edit'

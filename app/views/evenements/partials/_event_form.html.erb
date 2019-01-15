@@ -1,0 +1,39 @@
+<%= form_for @evenement do |f| %>
+
+  <%= f.label :title, 'Titre' %><br>
+  <%= f.text_field :title %><br>
+  <br>
+
+  <%= f.label :description, 'Description' %><br>
+  <%= f.text_area :description %><br>
+  <br>
+
+  <%= f.label :adress, 'Adresse' %><br>
+  <%= f.text_field :adress %><br>
+  <br>
+
+  <%= f.label :city, 'Ville' %><br>
+  <%= f.text_field :city %><br>
+  <br>
+
+  <%= f.label :zipcode, 'Code Postal' %><br>
+  <%= f.text_field :zipcode %><br>
+  <br>
+
+  <%= f.label :date, 'date' %><br>
+  <%= f.date_field :date %><br>
+  <br>
+
+  <%= f.label :time, 'Time' %><br>
+  <%= f.time_field :time %><br>
+  <br>
+
+  <% if current_page?(action: 'new') %>
+    <%= f.submit 'Ajouter' %>
+  <% end %>
+  <% if current_page?(action: 'edit') %>
+    <%= f.submit 'Mettre à Jour' %>
+    <%= link_to 'Effacer', @evenement, method: :delete, data: {confirm: 'Veux tu vraiment effacer cet évènement ?'} %>
+  <% end %>
+
+<% end %>
