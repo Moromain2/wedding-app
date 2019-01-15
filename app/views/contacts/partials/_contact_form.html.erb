@@ -1,0 +1,30 @@
+<%= form_for @contact do |f| %>
+
+  <%= f.label :firstname, 'Prénom' %><br>
+  <%= f.text_field :firstname %><br>
+  <br>
+
+  <%= f.label :lastname, 'Nom' %><br>
+  <%= f.text_field :lastname %><br>
+  <br>
+
+  <%= f.label :role, 'Rôle' %><br>
+  <%= f.text_field :role %><br>
+  <br>
+
+  <%= f.label :phonenumber, 'Numéro de téléphone' %><br>
+  <%= f.text_field :phonenumber %><br>
+
+  <%= f.label :email, 'Email' %><br>
+  <%= f.text_field :email %><br>
+  <br>
+
+  <% if current_page?(action: 'new') %>
+    <%= f.submit 'Ajouter' %>
+  <% end %>
+  <% if current_page?(action: 'edit') %>
+    <%= f.submit 'Mettre à Jour' %>
+    <%= link_to 'Effacer', @contact, method: :delete, data: {confirm: 'Veux tu vraiment effacer cet hébergement ?'} %>
+  <% end %>
+
+<% end %>

@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :contacts
+  get 'contacts/new'
+  get 'contact/create'
+  get 'contacts/edit'
+  get 'contacts/update'
+  get 'contacts/show'
+  get 'contacts/index'
+  get 'contacts/destroy'
   resources :hebergements
   get 'hebergements/new'
   get 'hebergements/create'
