@@ -1,0 +1,2 @@
+class ListeDeMariage < ApplicationRecord
+end

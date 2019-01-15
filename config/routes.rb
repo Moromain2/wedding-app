@@ -1,27 +1,26 @@
 Rails.application.routes.draw do
+  resources :liste_de_mariages
+  get 'liste_de_mariages/new'
+  get 'liste_de_mariages/edit'
+  get 'liste_de_mariages/show'
+  get 'liste_de_mariages/index'
+
   resources :contacts
   get 'contacts/new'
-  get 'contact/create'
   get 'contacts/edit'
-  get 'contacts/update'
   get 'contacts/show'
   get 'contacts/index'
-  get 'contacts/destroy'
+
   resources :hebergements
   get 'hebergements/new'
-  get 'hebergements/create'
   get 'hebergements/edit'
-  get 'hebergements/update'
   get 'hebergements/show'
   get 'hebergements/index'
-  get 'hebergements/destroy'
+  
   resources :posts
   get 'posts/new'
-  get 'posts/create'
   get 'posts/edit'
-  get 'posts/update'
   get 'posts/show'
   get 'posts/index'
-  get 'posts/destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
