@@ -1,15 +1,80 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
  *= require_tree .
  *= require_self
  */
+
+/* ===== Fonts ===== */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
+
+@font-face {
+ font-family: "Garamond Bold";
+ src: url("assets/fonts/AGaramondPro-Bold.woff") format("woff");
+}
+
+/* ===== Resets ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style-type: none;
+}
+
+/* ===== General ===== */
+:root {
+  --blue: #233269;
+  --white: #FAFAFA;
+  --pink: #FABEBE;
+}
+html {
+  background-color: var(--white);
+}
+body {
+  font-family: 'Montserrat', 'Helvetica', sans-serif;
+  color: var(--blue);
+  padding: 0 5%;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Garamond Bold', 'Times New Roman', serif;
+}
+.page-wrapper {
+  margin-top: calc(92px + 2rem); /* Change to fit the navabar height */
+}
+
+/* ===== Navbar ===== */
+.navbar-container, .navbar-logo, .navbar-links {
+  width: 100%;
+}
+.navbar-wrapper {
+  width: 90%;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--blue);
+  position: fixed;
+  top: 0;
+  background-color: var(--white);
+}
+.navbar-logo {
+  display: flex;
+  justify-content: center;
+}
+.navbar-logo h1 {
+  font-family: 'Montserrat', 'Helvetica', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.navbar-logo h1 span {
+  font-family: 'Garamond Bold', 'Times New Roman', serif;
+  color: var(--pink);
+}
+.navbar-links nav ul {
+  display: flex;
+  justify-content: space-between;
+}

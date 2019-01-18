@@ -1,15 +1,19 @@
-<h1><%= @hebergement.title %></h1>
-<p><%= @hebergement.description %></p>
+<div class="page-wrapper">
 
-<ul>
-  <li><%= @hebergement.adress %></li>
-  <li><%= @hebergement.city %></li>
-  <li><%= @hebergement.zipcode %></li>
-  <li><%= link_to "#{@hebergement.phonenumber}", "tel:#{@hebergement.phonenumber}" %></li>
-  <% if @hebergement.email? %>
-    <li><%= mail_to "#{@hebergement.email}", "Envoyer un mail" %></li>
-  <% end %>
-  <% if @hebergement.website? %>
-    <li><%= link_to "Site Web", "#{@hebergement.website}", target: "_blank" %></li>
-  <% end %>
-</ul>
+  <h1><%= @hebergement.title %></h1>
+  <p><%= @hebergement.description %></p>
+
+  <ul>
+    <li><%= @hebergement.adress %></li>
+    <li><%= @hebergement.city %></li>
+    <li><%= @hebergement.zipcode %></li>
+    <li><%= link_to "#{@hebergement.phonenumber}", "tel:#{@hebergement.phonenumber}" %></li>
+    <% if @hebergement.email? %>
+      <li><%= mail_to "#{@hebergement.email}", "Envoyer un mail" %></li>
+    <% end %>
+    <% if @hebergement.website? %>
+      <li><%= link_to "Site Web", "#{@hebergement.website}", target: "_blank" %></li>
+    <% end %>
+  </ul>
+
+</div>

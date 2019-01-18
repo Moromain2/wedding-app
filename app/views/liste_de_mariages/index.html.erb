@@ -1,12 +1,16 @@
-<h1>Listes de mariage</h1>
-<% if @liste_de_mariages.any? %>
-  <% @liste_de_mariages.each do |liste| %>
-    <h3><%= link_to liste.title, liste.link, target: "_blank" %></h3>
-    <% if liste.description? %>
-      <em><%= liste.description %></em>
+<div class="page-wrapper">
+
+  <h1>Listes de mariage</h1>
+  <% if @liste_de_mariages.any? %>
+    <% @liste_de_mariages.each do |liste| %>
+      <h3><%= link_to liste.title, liste.link, target: "_blank" %></h3>
+      <% if liste.description? %>
+        <em><%= liste.description %></em>
+      <% end %>
+      <small><%= link_to 'Modifier', {:action => 'edit', :id => liste.id} %></small>
     <% end %>
-    <small><%= link_to 'Modifier', {:action => 'edit', :id => liste.id} %></small>
+  <% else %>
+  <h4>Pas encore de liste pour le moment, ça arrive vite 😉</h4>
   <% end %>
-<% else %>
-<h4>Pas encore de liste pour le moment, ça arrive vite 😉</h4>
-<% end %>
+  
+</div>

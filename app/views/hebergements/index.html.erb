@@ -1,11 +1,15 @@
-<h1>Tous les hébergements</h1>
+<div class="page-wrapper">
+  
+  <h1>Tous les hébergements</h1>
 
-<% if @hebergements.any? %>
-  <ul>
-  <% @hebergements.each do |hebergement| %>
-    <li><%= link_to hebergement.title, hebergement_path(hebergement) %></li>
+  <% if @hebergements.any? %>
+    <ul>
+    <% @hebergements.each do |hebergement| %>
+      <li><%= link_to hebergement.title, hebergement_path(hebergement) %></li>
+    <% end %>
+    </ul>
+  <% else %>
+    <h4>Pas encore d'hébergements pour le moment, ça arrive vite 😉</h4>
   <% end %>
-  </ul>
-<% else %>
-  <h4>Pas encore d'hébergements pour le moment, ça arrive vite 😉</h4>
-<% end %>
+
+</div>
