@@ -1,0 +1,67 @@
+<h1>Mariage de Camille et Antoine</h1>
+<h3>22 juillet 2019</h3>
+<h3>Meyrueis</h3>
+
+<section id="accomodation" style="border-bottom:1px solid black">
+  <h1>Logements</h1>
+  <% if @hebergements.any? %>
+    <% @hebergements.last(3).each do |hebergement| %>
+      <h2><%= hebergement.title %></h2>
+      <p><%= hebergement.description %></p>
+      <%= link_to 'Réserver', hebergement_path(hebergement) %>
+    <% end %>
+  <% else %>
+    <p>Pas encore d'hébèrgement</p>
+  <% end %>
+  <% if @hebergements.any? %>
+    <%= link_to 'Voir tous les logements', hebergements_path %>
+  <% end %>
+</section>
+
+<section id="planning" style="border-bottom:1px solid black">
+  <h1>Programme</h1>
+  <% if @evenements.any? %>
+    <% @evenements.last(3).each do |evenement| %>
+      <h2><%= evenement.title %></h2>
+      <h3><%= evenement.adress %></h3>
+      <h3><%= evenement.city %></h3>
+      <date><%= evenement.date %> <%= evenement.time %></date>
+    <% end %>
+  <% else %>
+    <p>Pas encore d'évènement</p>
+  <% end %>
+  <% if @evenements.any? %>
+    <%= link_to 'Voir tous les évènements', evenements_path %>
+  <% end %>
+</section>
+
+<section id="list">
+  <h1>Liste de mariage</h1>
+  <% if @liste_de_mariages.any? %>
+    <% @liste_de_mariages.last(3).each do |liste| %>
+      <h2><%= link_to liste.title, liste.link, target: '_blank' %></h2>
+    <% end %>
+  <% else %>
+    <p>Pas encore d'évènement</p>
+  <% end %>
+  <% if @liste_de_mariages.any? %>
+    <%= link_to 'Voir plus', liste_de_mariages_path %>
+  <% end %>
+</section>
+
+<section id="contacts">
+  <h1>Contacts</h1>
+  <% if @contacts.any? %>
+    <% @contacts.last(3).each do |contact| %>
+      <%= image_tag(contact.avatar) %>
+      <h3><%= contact.firstname %> <%= contact.lastname %></h3>
+      <h5><%= contact.role %></h5>
+      <%= link_to "Appeler", "tel:#{contact.phonenumber}" %>
+    <% end %>
+  <% else %>
+    <p>Pas encore de contacts</p>
+  <% end %>
+  <% if @contacts.any? %>
+    <%= link_to 'Voir tous les contacts', contacts_path %>
+  <% end %>
+</section>

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :pages
+  root 'pages#home'
+
   resources :evenements
   get 'evenements/new'
   get 'evenements/edit'
