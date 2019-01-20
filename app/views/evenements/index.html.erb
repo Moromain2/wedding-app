@@ -1,0 +1,15 @@
+<div class="page-wrapper">
+
+  <h1>Évènements</h1>
+
+  <% if @evenements.any? %>
+    <ul>
+    <% @evenements.each do |evenement| %>
+      <li><%= link_to evenement.title, evenement_path(evenement) %></li>
+    <% end %>
+    </ul>
+  <% else %>
+    <h4>Pas encore d'évènement pour le moment, ça arrive vite 😉</h4>
+  <% end %>
+
+</div>
