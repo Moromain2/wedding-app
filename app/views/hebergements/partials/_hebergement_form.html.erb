@@ -1,35 +1,35 @@
 <%= form_for @hebergement do |f| %>
 
-  <%= f.label :title, 'Nom' %><br>
-  <%= f.text_field :title %><br>
+  <%= f.label :title, 'Nom *' %><br>
+  <%= f.text_field :title, :required => true, placeholder: "Requis" %><br>
   <br>
 
   <%= f.label :description, 'Description' %><br>
-  <%= f.text_area :description %><br>
+  <%= f.text_area :description, :required => false, placeholder: "Optionel" %><br>
   <br>
 
-  <%= f.label :adress, 'Adresse' %><br>
-  <%= f.text_field :adress %><br>
+  <%= f.label :adress, 'Adresse *' %><br>
+  <%= f.text_field :adress, :required => true, placeholder: "Requis" %><br>
   <br>
 
-  <%= f.label :city, 'Ville' %><br>
-  <%= f.text_field :city %><br>
+  <%= f.label :city, 'Ville *' %><br>
+  <%= f.text_field :city, :required => true, placeholder: "Requis" %><br>
   <br>
 
-  <%= f.label :zipcode, 'Code Postal' %><br>
-  <%= f.text_field :zipcode %><br>
+  <%= f.label :zipcode, 'Code Postal *' %><br>
+  <%= f.text_field :zipcode, :required => true, placeholder: "Requis" %><br>
   <br>
 
-  <%= f.label :phonenumber, 'Numéro de téléphone' %><br>
-  <%= f.text_field :phonenumber %><br>
+  <%= f.label :phonenumber, 'Numéro de téléphone *' %><br>
+  <%= f.text_field :phonenumber, :required => true, placeholder: "Requis" %><br>
   <br>
 
   <%= f.label :email, 'Email' %><br>
-  <%= f.text_field :email %><br>
+  <%= f.text_field :email, :required => false, placeholder: "Optionel" %><br>
   <br>
 
   <%= f.label :website, 'Site Web' %><br>
-  <%= f.text_field :website %><br>
+  <%= f.text_field :website, :required => false, placeholder: "Optionel - https://siteweb.com" %><br>
   <br>
 
   <% if current_page?(action: 'new') %>

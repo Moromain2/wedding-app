@@ -4,10 +4,6 @@ class ListeDeMariagesController < ApplicationController
     @liste_de_mariages = ListeDeMariage.all
   end
 
-  def show
-    @liste_de_mariage = ListeDeMariage.find(params[:id])
-  end
-
   def new
     @liste_de_mariage = ListeDeMariage.new
   end
