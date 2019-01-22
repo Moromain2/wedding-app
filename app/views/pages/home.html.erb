@@ -27,7 +27,7 @@
       <h2><%= evenement.title %></h2>
       <h3><%= evenement.adress %></h3>
       <h3><%= evenement.city %></h3>
-      <date><%= evenement.date %> <%= evenement.time %></date>
+      <date><%= evenement.date.strftime('%A, %b %d') %> à <%= evenement.time.strftime('%H:%M') %></date>
     <% end %>
   <% else %>
     <p>Pas encore d'évènement</p>
@@ -59,6 +59,7 @@
       <h3><%= contact.firstname %> <%= contact.lastname %></h3>
       <h5><%= contact.role %></h5>
       <%= link_to "Appeler", "tel:#{contact.phonenumber}" %>
+      <br>
     <% end %>
   <% else %>
     <p>Pas encore de contacts</p>

@@ -1,7 +1,7 @@
 <div class="page-wrapper">
 
   <h1><%= @evenement.title %></h1>
-  <small>Le <%= @evenement.date %> à <%= @evenement.time %></small>
+  <small>Le <%= @evenement.date.strftime('%A, %b %d') %> à <%= @evenement.time.strftime('%H:%M') %></small>
   <h4><em><%= @evenement.adress %> <%= @evenement.zipcode %> <%= @evenement.city %></em></h4>
   <p><%= @evenement.description %></p>
 
