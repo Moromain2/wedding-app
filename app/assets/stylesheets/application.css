@@ -27,17 +27,23 @@ li {
 
 /* ===== General ===== */
 :root {
-  --blue: #233269;
+  --blue: #285564;
+  --light-blue: #5096AA;
   --white: #FAFAFA;
   --pink: #FABEBE;
+  --font-stack:  'Montserrat', 'Helvetica', sans-serif;
+  --shadow: 0 -2px 6px 1px rgba(0,0,0,0.30), 0 1px 2px 0 rgba(0,0,0,0.30);
+  --transition: all cubic-bezier(1, -0.25, 0.75, 1) 250ms
 }
 html {
   background-color: var(--white);
 }
 body {
-  font-family: 'Montserrat', 'Helvetica', sans-serif;
+  font-family: var(--font-stack);
   color: var(--blue);
-  padding: 0 5%;
+}
+section {
+  padding: 4rem 5%;
 }
 h1,
 h2,
@@ -47,25 +53,85 @@ h3 {
 .page-wrapper {
   margin-top: calc(92px + 2rem); /* Change to fit the navabar height */
 }
+.section-header {
+  font-family: var(--font-stack);
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.card-header {
+  font-family: var(--font-stack);
+  font-weight: 400;
+  margin-bottom: .25rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.card-button {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: var(--blue);
+  color: var(--white);
+  transition: var(--transition);
+}
+.card-button:hover {
+  background-color: var(--light-blue);
+  color: var(--blue);
+}
+div[class$="-card"] {
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  color: var(--blue);
+  padding: 1rem;
+  text-align: center;
+}
+.section-button {
+  width: 33.33%;
+  padding: 1rem 0;
+  text-align: center;
+  display: block;
+  margin: auto;
+  transition: var(--transition);
+}
+.button-light {
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+.button-light:hover {
+  background-color: var(--white);
+  color: var(--blue);
+}
+.button-dark {
+  border: 1px solid var(--blue);
+  color: var(--blue);
+}
+.button-dark:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
 
 /* ===== Navbar ===== */
 .navbar-container, .navbar-logo, .navbar-links {
   width: 100%;
 }
 .navbar-wrapper {
-  width: 90%;
-  padding: 1rem 0;
+  width: 100%;
+  padding: 1rem 5%;
   border-bottom: 1px solid var(--blue);
   position: fixed;
   top: 0;
   background-color: var(--white);
+  margin: 0;
+  z-index: 2;
 }
 .navbar-logo {
   display: flex;
   justify-content: center;
 }
 .navbar-logo h1 {
-  font-family: 'Montserrat', 'Helvetica', sans-serif;
+  font-family: var(--font-stack);
   text-transform: uppercase;
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
@@ -84,9 +150,222 @@ h3 {
   height: 2px;
   background-color: var(--pink);
   display: block;
-  transition: all ease-in-out 200ms;
+  transition: var(--transition);
   margin: -1px auto 0;
 }
 .navbar-links nav ul li a:hover::after, .navbar-links nav ul li a.active::after {
-  width: 90%;
+  width: 100%;
+}
+
+/* ===== Hero Section ===== */
+.hero-container {
+  display: flex;
+  align-items: center;
+}
+.hero-card {
+  padding: 2rem;
+  margin-right: -3rem;
+  z-index: 1;
+  min-width: 300px;
+}
+.hero-image-container {
+  width: calc(1fr + 3rem);
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.hero-image-container img {
+  width: 100%;
+  height: auto;
+}
+.hero-card p {
+  font-size: 1rem;
+}
+.hero-card p strong {
+  font-weight: 500;
+}
+.hero-card h2 {
+  font-family: var(--font-stack);
+  margin: .7rem 0;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.hero-card .card-button {
+  margin-top: 2rem;
+}
+
+/* ===== Planning Section ===== */
+.planning-cards-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.planning-card {
+  width: calc(50% - .5rem);
+  display: flex;
+  align-items: center;
+}
+.planning-card:nth-of-type(3),
+.planning-card:nth-of-type(4) {
+  margin-top: 1rem;
+}
+.planning-card-date {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--blue);
+  padding-right: 1rem;
+  justify-content: flex-start;
+  text-align: left;
+}
+.planning-card-date time {
+  color: var(--pink);
+  font-family: 'Garamond Bold', 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.planning-card-date img {
+  width: 3rem;
+  height: auto;
+}
+.planning-card-info {
+  padding-left: 1rem;
+  text-align: left;
+}
+.planning-card-info h2 {
+  font-family: var(--font-stack);
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: .4rem;
+}
+
+/* ===== Logements Section ===== */
+#accomodation {
+  background-color: var(--blue);
+  color: var(--white);
+}
+.accomodation-cards-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.accomodation-card {
+  width: calc(33.33% - 0.67rem);
+}
+.accomodation-card p {
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Acces Section ===== */
+#acces {
+  background-color: var(--blue);
+  color: var(--white);
+}
+.acces-informations {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.acces-informations-body, .acces-informations-map {
+  width: calc(50% - .5rem);
+}
+.acces-informations-body ul {
+  margin-bottom: 1rem;
+}
+.acces-informations-body ul li {
+  list-style-type: circle;
+  margin-left: 1rem;
+}
+.acces-informations-map iframe {
+  width: 100%;
+  height: 300px;
+  box-shadow: var(--shadow);
+}
+
+/* ===== Contacts Section ===== */
+.contact-cards-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.contact-card {
+  width: calc(33.33% - 0.67rem);
+}
+.contact-card .avatar-container {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 10rem;
+  border: 1px solid var(--blue);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+}
+.contact-card .avatar-container img {
+  width: 100%;
+  height: auto;
+}
+.contact-card h5 {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* ===== Footer ===== */
+.footer-container {
+  background-color: var(--pink);
+  color: var(--blue);
+  padding: 4rem 5% 6rem;
+}
+.footer-container p:first-of-type {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  font-size: .8rem;
+}
+.footer-content div {
+  width: calc(33.33% - 0.67rem);
+}
+.site-map h2 {
+  font-family: var(--font-stack);
+  font-weight: 700;
+  font-size: .8rem;
+  margin-bottom: .5rem;
+}
+.site-map nav ul li {
+  list-style-type: circle;
+  margin-left: 1rem;
+  margin-bottom: .25rem;
+}
+.site-map nav ul li a {
+  text-decoration: underline;
+}
+.contact-info {
+  text-align: center;
+}
+.contact-info p {
+  font-weight: 400 !important;
+  margin-bottom: .5rem !important;
+}
+.contact-info a {
+  margin-bottom: .25rem;
+  text-decoration: underline;
+  display: block;
+}
+.contact-info a:last-of-type {
+  margin-bottom: 0;
+}
+.admin-acces {
+  text-align: right;
+}
+.admin-acces a {
+  text-decoration: underline;
 }

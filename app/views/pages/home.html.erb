@@ -1,72 +1,111 @@
 <div class="page-wrapper">
 
-<h1>Mariage de Camille et Antoine</h1>
-<h3>22 juillet 2019</h3>
-<h3>Meyrueis</h3>
+  <section id="hero">
+    <div class="hero-container">
+      <div class="hero-card">
+        <p><strong>Camille & Antoine</strong></p>
+        <p>Vous invitent à leur mariage</p>
+        <h2><date>22 juillet 2019</date></h2>
+        <p>à meyrueis</p>
+        <%= link_to 'S\'y rendre', hebergements_path, :class => 'card-button' %>
+      </div>
+      <div class="hero-image-container">
+        <%= image_tag('bg-image.jpg') %>
+      </div>
+    </div>
+  </section>
 
-<section id="accomodation" style="border-bottom:1px solid black">
-  <h1>Logements</h1>
-  <% if @hebergements.any? %>
-    <% @hebergements.last(3).each do |hebergement| %>
-      <h2><%= hebergement.title %></h2>
-      <p><%= hebergement.description %></p>
-      <%= link_to 'Réserver', hebergement_path(hebergement) %>
+  <section id="accomodation">
+    <h1 class="section-header">Logements</h1>
+    <% if @hebergements.any? %>
+    <div class="accomodation-cards-container">
+      <% @hebergements.last(3).each do |hebergement| %>
+      <div class="accomodation-card">
+        <h2 class="card-header"><%= hebergement.title %></h2>
+        <p><%= hebergement.description %></p>
+        <%= link_to 'Réserver', hebergement_path(hebergement), :class => 'card-button' %>
+      </div>
+      <% end %>
+    </div>
+    <% else %>
+      <p>Pas encore d'hébèrgement</p>
     <% end %>
-  <% else %>
-    <p>Pas encore d'hébèrgement</p>
-  <% end %>
-  <% if @hebergements.any? %>
-    <%= link_to 'Voir tous les logements', hebergements_path %>
-  <% end %>
-</section>
+    <% if @hebergements.any? %>
+      <%= link_to 'Voir tous les logements', hebergements_path, :class => 'section-button button-light' %>
+    <% end %>
+  </section>
 
-<section id="planning" style="border-bottom:1px solid black">
-  <h1>Programme</h1>
-  <% if @evenements.any? %>
-    <% @evenements.last(3).each do |evenement| %>
-      <h2><%= evenement.title %></h2>
-      <h3><%= evenement.adress %></h3>
-      <h3><%= evenement.city %></h3>
-      <date><%= evenement.date.strftime('%A, %b %d') %> à <%= evenement.time.strftime('%H:%M') %></date>
+  <section id="planning">
+    <h1 class="section-header">Programme</h1>
+    <% if @evenements.any? %>
+    <div class="planning-cards-container">
+      <% @evenements.last(4).each do |evenement| %>
+      <div class="planning-card">
+        <div class="planning-card-date">
+          <time><%= evenement.date.strftime('%b %d') %></time>
+          <time><%= evenement.time.strftime('%H:%M') %></time>
+          <%= image_tag('calendar-icon.svg') %>
+        </div>
+        <div class="planning-card-info">
+          <h2><%= evenement.title %></h2>
+          <p class='event-adress'><%= evenement.adress %></p>
+          <p class='event-city'><%= evenement.city %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% else %>
+      <p>Pas encore d'évènement</p>
     <% end %>
-  <% else %>
-    <p>Pas encore d'évènement</p>
-  <% end %>
-  <% if @evenements.any? %>
-    <%= link_to 'Voir tous les évènements', evenements_path %>
-  <% end %>
-</section>
+    <% if @evenements.any? %>
+      <%= link_to 'Voir tous les évènements', evenements_path, :class => 'section-button button-dark' %>
+    <% end %>
 
-<section id="list">
-  <h1>Liste de mariage</h1>
-  <% if @liste_de_mariages.any? %>
-    <% @liste_de_mariages.last(3).each do |liste| %>
-      <h2><%= link_to liste.title, liste.link, target: '_blank' %></h2>
-    <% end %>
-  <% else %>
-    <p>Pas encore d'évènement</p>
-  <% end %>
-  <% if @liste_de_mariages.any? %>
-    <%= link_to 'Voir plus', liste_de_mariages_path %>
-  <% end %>
-</section>
+  </section>
 
-<section id="contacts">
-  <h1>Contacts</h1>
-  <% if @contacts.any? %>
-    <% @contacts.last(3).each do |contact| %>
-      <%= image_tag(contact.avatar) %>
-      <h3><%= contact.firstname %> <%= contact.lastname %></h3>
-      <h5><%= contact.role %></h5>
-      <%= link_to "Appeler", "tel:#{contact.phonenumber}" %>
-      <br>
+  <section id="contacts">
+    <h1 class="section-header">Contacts utiles</h1>
+    <div class="contact-cards-container">
+    <% if @contacts.any? %>
+      <% @contacts.last(3).each do |contact| %>
+        <div class="contact-card">
+          <div class="avatar-container">
+            <%= image_tag(contact.avatar) %>
+          </div>
+          <h3 class="card-header"><%= contact.firstname %> <%= contact.lastname %></h3>
+          <h5><%= contact.role %></h5>
+          <%= link_to "Appeler", "tel:#{contact.phonenumber}", :class => 'card-button' %>
+        </div>
+      <% end %>
+    </div>
+    <% else %>
+      <p>Pas encore de contacts</p>
     <% end %>
-  <% else %>
-    <p>Pas encore de contacts</p>
-  <% end %>
-  <% if @contacts.any? %>
-    <%= link_to 'Voir tous les contacts', contacts_path %>
-  <% end %>
-</section>
+    <% if @contacts.any? %>
+      <%= link_to 'Voir tous les contacts', contacts_path, :class => 'section-button button-dark' %>
+    <% end %>
+  </section>
+
+  <section id="acces">
+    <h1 class="section-header">Se rendre à Meyrueis</h1>
+    <div class="acces-informations">
+      <div class="acces-informations-body">
+        <h2 class="card-header">En avion</h2>
+        <ul>
+          <li>Paris - Montpelier (1h de trajet)</li>
+          <li>Paris - Rodez (1h de trajet)</li>
+        </ul>
+        <h2 class="card-header">En Train</h2>
+        <ul>
+          <li>Paris - Montpelier (4h de trajet)</li>
+        </ul>
+        <h2 class="card-header">En voiture</h2>
+        <p>7 heures de route depuis Paris (possibilté de se garer dans le village)</p>
+      </div>
+      <div class="acces-informations-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d732608.2812671161!2d2.9042007573320574!3d44.17098941512263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b3970be4c9bbf1%3A0x40788211669a280!2s48150+Meyrueis!5e0!3m2!1sfr!2sfr!4v1550063370940" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
 
 </div>
