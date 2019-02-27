@@ -1,23 +1,29 @@
 <div class="page-wrapper">
 
-  <h1>Tous les contacts</h1>
-
-  <% if @contacts.any? %>
-    <% @contacts.each do |contact| %>
-      <% if contact.avatar.attached? %>
-        <%= image_tag(contact.avatar) %>
-      <% end %>
-      <h2><%= contact.firstname %> <%= contact.lastname %></h2>
-      <em><%= contact.role %></em>
-      <ul>
-        <li><%= link_to "#{contact.phonenumber}", "tel:#{contact.phonenumber}" %></li>
-        <% if contact.email? %>
-          <li><%= mail_to "#{contact.email}", "Envoyer un mail à #{contact.firstname}" %></li>
+  <section id="contacts-page">
+    <h1 class="section-header">Contacts utiles</h1>
+    <p class="section-intro">Retrouvez toutes les personnes à contacter pour toutes vos demandes</p>
+    <% if @contacts.any? %>
+    <div class="contact-cards-container">
+      <% @contacts.each do |contact| %>
+      <div class="contact-card">
+        <% if contact.avatar.attached? %>
+        <div class="avatar-container">
+          <%= image_tag(contact.avatar) %>
+        </div>
         <% end %>
-      </ul>
+        <h2 class="card-header"><%= contact.firstname %> <%= contact.lastname %></h2>
+        <p class="contact-role"><%= contact.role %></p>
+        <%= link_to "#{contact.phonenumber}", "tel:#{contact.phonenumber}", :class => 'card-button' %>
+        <% if contact.email? %>
+          <%= mail_to "#{contact.email}", "Envoyer un mail à #{contact.firstname}", :class => 'card-button' %>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+    <% else %>
+      <h4>Pas encore de contact pour le moment, ça arrive vite 😉</h4>
     <% end %>
-  <% else %>
-    <h4>Pas encore de contact pour le moment, ça arrive vite 😉</h4>
-  <% end %>
+  </section>
 
 </div>
