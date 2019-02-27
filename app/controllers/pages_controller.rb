@@ -5,4 +5,7 @@ class PagesController < ApplicationController
     @liste_de_mariages = ListeDeMariage.all
     @contacts = Contact.all
   end
+
+  def acces
+  end
 end

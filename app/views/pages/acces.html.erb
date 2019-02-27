@@ -1,0 +1,45 @@
+<div class="page-wrapper">
+  <section id="access-image-container">
+    <div class="access-page-title">
+      <h1>Bienvenue à Meyrueis</h1>
+      <p>Just like Holywood but in Les Cévennes</p>
+    </div>
+  </section>
+
+  <section id="car-access">
+    <h1 class="section-header">S’y rendre en voiture depuis Paris</h1>
+    <p class="section-intro">Environ 7 heures de route avec de nombreuses possibilités de se garer dans le village. Retrouvez l’itinéraire le plus direct ci dessous.</p>
+    <div class="map-card">
+      <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJD7fiBh9u5kcRYJSMaMOCCwQ&destination=place_id:ChIJ8bvJ5AuXsxIRgKJpFiGIBwQ&key=AIzaSyDZ5ZSk1wfl3iW_QXXRnlcFZa35u4VH8hk" allowfullscreen></iframe>
+      <%= link_to 'Ouvrir dans Google Maps', 'https://www.google.fr/maps/dir/Paris/Meyrueis/@46.4312275,-1.8518591,6z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x47e66e1f06e2b70f:0x40b82c3688c9460!2m2!1d2.3522219!2d48.856614!1m5!1m1!1s0x12b3970be4c9bbf1:0x40788211669a280!2m2!1d3.43001!2d44.180863!3e0', target: "_blank", :class => 'card-map-link' %>
+    </div>
+  </section>
+  <section id="transportation-access">
+    <h1 class="section-header">S’y rendre depuis les aéroports et gares à proximité</h1>
+    <div class="airports-access-container">
+      <div class="airport-container">
+        <p class="section-intro">Depuis l’aéroport de Montpelier</p>
+        <div class="map-card">
+          <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJdVNPY7ikthIRLc1BPVGCK9o&destination=place_id:ChIJ8bvJ5AuXsxIRgKJpFiGIBwQ&key=AIzaSyDZ5ZSk1wfl3iW_QXXRnlcFZa35u4VH8hk" allowfullscreen></iframe>
+          <%= link_to 'Ouvrir dans Google Maps', 'https://www.google.fr/maps/dir/A%C3%A9roport+Montpellier+M%C3%A9diterran%C3%A9e/Meyrueis/@43.8028594,3.0778924,9z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x12b6a4b8634f5375:0xda2b82513d41cd2d!2m2!1d3.9652372!2d43.5795991!1m5!1m1!1s0x12b3970be4c9bbf1:0x40788211669a280!2m2!1d3.43001!2d44.180863!3e0', target: "_blank", :class => 'card-map-link' %>
+        </div>
+      </div>
+      <div class="airport-container">
+        <p class="section-intro">Depuis l’aéroport de Rodez</p>
+        <div class="map-card">
+          <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJR6QjnFaHshIRqchTAGWBcYM&destination=place_id:ChIJ8bvJ5AuXsxIRgKJpFiGIBwQ&key=AIzaSyDZ5ZSk1wfl3iW_QXXRnlcFZa35u4VH8hk" allowfullscreen></iframe>
+          <%= link_to 'Ouvrir dans Google Maps', 'https://www.google.fr/maps/dir/A%C3%A9roport+Rodez-Aveyron,+Route+Decazeville,+Salles-la-Source/Meyrueis/@44.2827537,2.6769689,10z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x12b287569c23a447:0x837181650053c8a9!2m2!1d2.4832137!2d44.4108155!1m5!1m1!1s0x12b3970be4c9bbf1:0x40788211669a280!2m2!1d3.43001!2d44.180863!3e0', target: "_blank", :class => 'card-map-link' %>
+        </div>
+      </div>
+    </div>
+    <div class="train-station-access-container">
+      <p class="section-intro">Depuis la Gare de Montpelier</p>
+      <div class="map-card">
+        <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJvQtlBqSvthIRcJd0JV-TZhc&destination=place_id:ChIJ8bvJ5AuXsxIRgKJpFiGIBwQ&key=AIzaSyDZ5ZSk1wfl3iW_QXXRnlcFZa35u4VH8hk" allowfullscreen></iframe>
+        <%= link_to 'Ouvrir dans Google Maps', 'https://www.google.fr/maps/dir/Montpellier+Saint-Roch,+Montpellier/Meyrueis/@43.8914886,2.9289564,9z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x12b6afa406650bbd:0x1766935f25749770!2m2!1d3.8807384!2d43.6047756!1m5!1m1!1s0x12b3970be4c9bbf1:0x40788211669a280!2m2!1d3.43001!2d44.180863!3e0', target: "_blank", :class => 'card-map-link' %>
+      </div>
+    </div>
+    <p class="access-shuttle-info">À partir de 25 personnes, des navettes depuis les gares ou les aéroports pourront être organisées. <br>
+      <%= link_to 'Tenez-nous informés', "mailto:reception@mariage-camille-antoine.fr", :class => 'inline-link' %> de vos besoins.</p>
+  </section>
+</div>

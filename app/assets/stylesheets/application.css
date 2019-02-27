@@ -369,3 +369,77 @@ div[class$="-card"] {
 .admin-acces a {
   text-decoration: underline;
 }
+
+
+/* ===== Acces page ===== */
+#access-image-container {
+  background-image: url('meyrueis-image.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.access-page-title h1,
+.access-page-title p {
+  text-align: center;
+  font-family: var(--font-stack);
+  color: var(--white);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.75);
+  font-weight: 700;
+}
+.access-page-title h1 {
+  font-size: 2rem;
+  margin-bottom: .8rem;
+}
+.acces-page-title p {
+  font-size: 1.6rem;
+}
+.map-card iframe {
+  width: 100%;
+}
+.map-card {
+  padding: 1rem;
+}
+.card-map-link {
+  text-transform: uppercase;
+  display: inline-block;
+  border-top: 1px solid var(--blue);
+  width: 100%;
+  margin-top: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+.section-intro {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+#car-access .map-card iframe,
+.train-station-access-container .map-card iframe {
+  height: 400px;
+}
+.airports-access-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.airport-container {
+  width: calc(50% - .5rem);
+}
+.airport-container iframe {
+  height: 300px;
+}
+.train-station-access-container {
+  margin-bottom: 2rem;
+}
+.access-shuttle-info {
+  text-align: center;
+}
+.inline-link {
+  text-decoration: underline;
+  color: var(--pink);
+  font-weight: 500;
+}

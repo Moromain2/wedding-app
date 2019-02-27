@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :pages
   root 'pages#home'
+  get "pages/acces" => "pages#acces"
 
   resources :evenements
   get 'evenements/new'
