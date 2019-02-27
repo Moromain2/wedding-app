@@ -1,15 +1,21 @@
 <div class="page-wrapper">
-  
-  <h1>Tous les hébergements</h1>
 
-  <% if @hebergements.any? %>
-    <ul>
-    <% @hebergements.each do |hebergement| %>
-      <li><%= link_to hebergement.title, hebergement_path(hebergement) %></li>
+  <section id="accomodation-page">
+    <h1 class="section-header">Hébergements</h1>
+    <p class="section-intro">Retrouvez tous les hôtels et hébergements de la région</p>
+    <% if @hebergements.any? %>
+    <div class="accomodation-cards-container">
+      <% @hebergements.each do |hebergement| %>
+      <div class="accomodation-card">
+        <h2 class="card-header"><%= hebergement.title %></h2>
+        <p><%= hebergement.description %></p>
+        <%= link_to 'Détails', hebergement_path(hebergement), :class => 'card-button' %>
+      </div>
+      <% end %>
+    </div>
+    <% else %>
+      <h4>Pas encore d'hébergements pour le moment, ça arrive vite 😉</h4>
     <% end %>
-    </ul>
-  <% else %>
-    <h4>Pas encore d'hébergements pour le moment, ça arrive vite 😉</h4>
-  <% end %>
+  </section>
 
 </div>

@@ -1,19 +1,23 @@
 <div class="page-wrapper">
 
-  <h1><%= @hebergement.title %></h1>
-  <p><%= @hebergement.description %></p>
-
-  <ul>
-    <li><%= @hebergement.adress %></li>
-    <li><%= @hebergement.city %></li>
-    <li><%= @hebergement.zipcode %></li>
-    <li><%= link_to "#{@hebergement.phonenumber}", "tel:#{@hebergement.phonenumber}" %></li>
-    <% if @hebergement.email? %>
-      <li><%= mail_to "#{@hebergement.email}", "Envoyer un mail" %></li>
-    <% end %>
-    <% if @hebergement.website? %>
-      <li><%= link_to "Site Web", "#{@hebergement.website}", target: "_blank" %></li>
-    <% end %>
-  </ul>
+  <section id="accomodation-show-page">
+    <h1 class="section-header"><%= @hebergement.title %></h1>
+    <p class="section-intro"><%= @hebergement.description %></p>
+    <div class="accomodation-contact-info">
+      <h4>Adresse</h4>
+      <ul>
+        <li><%= @hebergement.adress %></li>
+        <li><%= @hebergement.zipcode %> <%= @hebergement.city %></li>
+      </ul>
+      <%= link_to "#{@hebergement.phonenumber}", "tel:#{@hebergement.phonenumber}", :class => 'page-button button-dark' %>
+      <% if @hebergement.email? %>
+        <%= mail_to "#{@hebergement.email}", "Envoyer un email", :class => 'page-button button-dark' %>
+      <% end %>
+      <% if @hebergement.website? %>
+        <%= link_to "Site Web", "#{@hebergement.website}", target: "_blank", :class => 'page-button button-dark' %>
+      <% end %>
+    </div>
+    <%= link_to "Retour aux autres hébergements", hebergements_path, :class => 'page-button button-dark' %>
+  </section>
 
 </div>
