@@ -1,15 +1,29 @@
 <div class="page-wrapper">
 
-  <h1>Listes de mariage</h1>
-  <% if @liste_de_mariages.any? %>
-    <% @liste_de_mariages.each do |liste| %>
-      <h3><%= link_to liste.title, liste.link, target: "_blank" %></h3>
-      <% if liste.description? %>
-        <em><%= liste.description %></em>
+  <section id="wedding-list-page">
+    <h1 class="section-header">Liste de mariage</h1>
+    <p class="section-intro">Retrouvez les liens vers nos listes de mariage</p>
+    <% if @liste_de_mariages.any? %>
+    <div class="list-cards-container">
+      <% @liste_de_mariages.each do |liste| %>
+        <%= link_to liste.link, target: "_blank", :class => 'list-card-link' do %>
+          <div class="list-card">
+            <div class="list-card-image">
+              <%= image_tag('gift-icon.svg') %>
+            </div>
+            <div class="list-card-content">
+              <h3><%= liste.title %></h3>
+              <% if liste.description? %>
+                <p><%= liste.description %></p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       <% end %>
+    </div>
+    <% else %>
+      <h4>Pas encore de liste pour le moment, ça arrive vite 😉</h4>
     <% end %>
-  <% else %>
-  <h4>Pas encore de liste pour le moment, ça arrive vite 😉</h4>
-  <% end %>
+  </section>
 
 </div>

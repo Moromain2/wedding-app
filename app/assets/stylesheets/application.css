@@ -496,3 +496,33 @@ div[class$="-card"] {
 .contact-card .card-button:last-of-type {
   margin-bottom: 0;
 }
+
+/* ===== Wedding list Page ===== */
+.list-cards-container {
+  width: 50%;
+  margin: auto;
+}
+.list-card {
+  text-align: left !important;
+  display: flex;
+  align-items: center;
+}
+.list-card-link {
+  display: block;
+  margin-bottom: 1rem;
+}
+.list-card-link:last-of-type {
+  margin-bottom: 0;
+}
+.list-card h3 {
+  font-size: 1.3rem;
+  font-family: var(--font-stack);
+}
+.list-card-image {
+  width: 3rem;
+  margin-right: 3rem;
+}
+.list-card-image img {
+  width: 100%;
+  height: auto;
+}
