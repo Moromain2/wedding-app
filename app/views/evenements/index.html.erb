@@ -1,15 +1,30 @@
 <div class="page-wrapper">
 
-  <h1>Évènements</h1>
-
-  <% if @evenements.any? %>
-    <ul>
-    <% @evenements.each do |evenement| %>
-      <li><%= link_to evenement.title, evenement_path(evenement) %></li>
+  <section id="events-page">
+    <h1 class="section-header">Programme</h1>
+    <p class="section-header">Découvrez les grands évènements du week end</p>
+    <% if @evenements.any? %>
+    <div class="event-cards-container">
+      <% @evenements.each do |evenement| %>
+        <%= link_to evenement_path(evenement) do %>
+        <div class="planning-card">
+          <div class="planning-card-date">
+            <time><%= evenement.date.strftime('%b %d') %></time>
+            <time><%= evenement.time.strftime('%H:%M') %></time>
+            <%= image_tag('calendar-icon.svg') %>
+          </div>
+          <div class="planning-card-info">
+            <h2><%= evenement.title %></h2>
+            <p class='event-adress'><%= evenement.adress %></p>
+            <p class='event-city'><%= evenement.city %></p>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+    <% else %>
+      <h4>Pas encore d'évènement pour le moment, ça arrive vite 😉</h4>
     <% end %>
-    </ul>
-  <% else %>
-    <h4>Pas encore d'évènement pour le moment, ça arrive vite 😉</h4>
-  <% end %>
+  </section>
 
 </div>

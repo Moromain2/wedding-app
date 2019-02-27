@@ -1,8 +1,13 @@
 <div class="page-wrapper">
 
-  <h1><%= @evenement.title %></h1>
-  <small>Le <%= @evenement.date.strftime('%A, %b %d') %> à <%= @evenement.time.strftime('%H:%M') %></small>
-  <h4><em><%= @evenement.adress %> <%= @evenement.zipcode %> <%= @evenement.city %></em></h4>
-  <p><%= @evenement.description %></p>
+  <section id="event-show-page">
+    <h1 class="section-header"><%= @evenement.title %></h1>
+    <p class="event-location"><%= @evenement.adress %> <%= @evenement.zipcode %> <%= @evenement.city %></p>
+    <p class="event-date">Le <%= @evenement.date.strftime('%A, %b %d') %> à <%= @evenement.time.strftime('%H:%M') %></p>
+    <div class="event-body-container">
+      <p><%= @evenement.description %></p>
+    </div>
+    <%= link_to 'Retour à la liste des évènements', evenements_path, :class => 'section-button button-dark' %>
+  </section>
 
 </div>
