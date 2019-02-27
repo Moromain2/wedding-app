@@ -454,6 +454,13 @@ div[class$="-card"] {
   color: var(--pink);
   font-weight: 500;
 }
+.directions-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.directions-container p {
+  margin-bottom: .4rem;
+}
 
 /* ===== Accomodation Page ===== */
 .accomodation-cards-container {

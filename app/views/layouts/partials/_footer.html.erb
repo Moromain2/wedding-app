@@ -6,11 +6,12 @@
         <h2>Plan du site</h2>
         <nav>
           <ul>
-            <li><%= link_to 'Accueil', root_path %></li>
-            <li><%= link_to 'Hébergements', hebergements_path %></li>
-            <li><%= link_to 'Programme', evenements_path %></li>
-            <li><%= link_to 'Listes de mariage', liste_de_mariages_path %></li>
-            <li><%= link_to 'Contacts', contacts_path %></li>
+            <li><%= link_to 'Accueil', root_path, :class => current_class?(root_path) %></li>
+            <li><%= link_to 'Accès', pages_acces_path, :class => current_class?(pages_acces_path) %></li>
+            <li><%= link_to 'Hébergement', hebergements_path, :class => current_class?(hebergements_path) %></li>
+            <li><%= link_to 'Programme', evenements_path, :class => current_class?(evenements_path) %></li>
+            <li><%= link_to 'Liste de mariage', liste_de_mariages_path, :class => current_class?(liste_de_mariages_path) %></li>
+            <li><%= link_to 'Contacts', contacts_path, :class => current_class?(contacts_path) %></li>
           </ul>
         </nav>
       </div>
