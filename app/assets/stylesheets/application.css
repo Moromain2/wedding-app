@@ -671,3 +671,31 @@ div[class$="-card"] {
   color: var(--white);
   cursor: pointer;
 }
+
+/* ===== Devise forms ===== */
+.login-form-card {
+  width: 40%;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+.login-form-card input[type="email"],
+.login-form-card input[type="password"] {
+  all: unset;
+  border: 1px solid var(--blue);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.login-form-card label:nth-child(1),
+.login-form-card label:nth-child(2) {
+  display: block;
+  margin-bottom: .4rem;
+}
+.login-form-card input[type="submit"] {
+  padding: 1rem 2rem;
+  background-color: var(--blue);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: var(--font-stack);
+  margin: 1rem auto;
+}

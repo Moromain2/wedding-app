@@ -1,5 +1,5 @@
 class EvenementsController < ApplicationController
-
+  before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
   def index
     @evenements = Evenement.all
   end
