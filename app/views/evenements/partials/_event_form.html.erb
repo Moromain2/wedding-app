@@ -1,39 +1,32 @@
 <%= form_for @evenement do |f| %>
+  <div class="form-wrapper">
+    <%= f.label :title, 'Titre *' %>
+    <%= f.text_field :title, :required => true, placeholder: "Requis" %>
 
-  <%= f.label :title, 'Titre *' %><br>
-  <%= f.text_field :title, :required => true, placeholder: "Requis" %><br>
-  <br>
+    <%= f.label :description, 'Description' %>
+    <%= f.text_area :description, :required => false, placeholder: "Optionel" %>
 
-  <%= f.label :description, 'Description' %><br>
-  <%= f.text_area :description, :required => false, placeholder: "Optionel" %><br>
-  <br>
+    <%= f.label :adress, 'Adresse' %>
+    <%= f.text_field :adress, :required => false, placeholder: "Optionel" %>
 
-  <%= f.label :adress, 'Adresse' %><br>
-  <%= f.text_field :adress, :required => false, placeholder: "Optionel" %><br>
-  <br>
+    <%= f.label :city, 'Ville *' %>
+    <%= f.text_field :city, :required => true, placeholder: "Requis" %>
 
-  <%= f.label :city, 'Ville *' %><br>
-  <%= f.text_field :city, :required => true, placeholder: "Requis" %><br>
-  <br>
+    <%= f.label :zipcode, 'Code Postal' %>
+    <%= f.text_field :zipcode, :required => false, placeholder: "Optionel" %>
 
-  <%= f.label :zipcode, 'Code Postal' %><br>
-  <%= f.text_field :zipcode, :required => false, placeholder: "Optionel" %><br>
-  <br>
+    <%= f.label :date, 'Date *' %>
+    <%= f.date_field :date, :required => true %>
 
-  <%= f.label :date, 'Date *' %><br>
-  <%= f.date_field :date, :required => true %><br>
-  <br>
+    <%= f.label :time, 'Horaire *' %>
+    <%= f.time_field :time, :required => true %>
 
-  <%= f.label :time, 'Horaire *' %><br>
-  <%= f.time_field :time, :required => true %><br>
-  <br>
-
-  <% if current_page?(action: 'new') %>
-    <%= f.submit 'Ajouter' %>
-  <% end %>
-  <% if current_page?(action: 'edit') %>
-    <%= f.submit 'Mettre à Jour' %>
-    <%= link_to 'Effacer', @evenement, method: :delete, data: {confirm: 'Veux tu vraiment effacer cet évènement ?'} %>
-  <% end %>
-
+    <% if current_page?(action: 'new') %>
+      <%= f.submit 'Ajouter' %>
+    <% end %>
+    <% if current_page?(action: 'edit') %>
+      <%= f.submit 'Mettre à Jour' %>
+      <%= link_to 'Effacer', @evenement, method: :delete, data: {confirm: 'Veux tu vraiment effacer cet évènement ?'} %>
+    <% end %>
+  </div>
 <% end %>

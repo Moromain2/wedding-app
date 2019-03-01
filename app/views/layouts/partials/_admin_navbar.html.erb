@@ -1,0 +1,23 @@
+<div class="admin-navbar-wrapper">
+  <h2 class="admin-title">Menu administrateur</h2>
+  <h4>Programme</h4>
+  <ul>
+    <li><%= link_to 'Liste des évènements', admin_admin_events_path %></li>
+    <li><%= link_to 'Nouvel évènement', new_evenement_path %></li>
+  </ul>
+  <h4>Hébergement</h4>
+  <ul>
+    <li><%= link_to 'Liste des hébergements', admin_admin_accomodations_path %></li>
+    <li><%= link_to 'Nouvel hébergement', new_hebergement_path %></li>
+  </ul>
+  <h4>Contact</h4>
+  <ul>
+    <li><%= link_to 'Liste des contacts', admin_admin_contacts_path %></li>
+    <li><%= link_to 'Nouveau contact', new_contact_path %></li>
+  </ul>
+  <h4>Liste de mariage</h4>
+  <ul>
+    <li><%= link_to 'Toutes les listes de mariage', admin_admin_lists_path %></li>
+    <li><%= link_to 'Nouvelle liste de mariage', new_liste_de_mariage_path %></li>
+  </ul>
+</div>

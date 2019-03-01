@@ -51,7 +51,7 @@ h3 {
   font-family: 'Garamond Bold', 'Times New Roman', serif;
 }
 .page-wrapper {
-  margin-top: calc(92px + 2rem); /* Change to fit the navabar height */
+  margin-top: calc(101px + 2rem); /* Change to fit the navabar height */
 }
 .section-header {
   font-family: var(--font-stack);
@@ -562,4 +562,112 @@ div[class$="-card"] {
   width: 50%;
   margin: auto;
   margin-bottom: 3rem;
+}
+
+/* ===== Admin Page ===== */
+.admin-pannel.page-wrapper {
+  margin-top: 101px;
+}
+.admin-page-container {
+  display: flex;
+}
+.admin-page-navigation {
+  width: 25%;
+  height: calc(100vh - 101px);
+  overflow: hidden;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 2rem 1rem;
+}
+.admin-page-main {
+  width: 75%;
+  padding: 2rem 1rem;
+  overflow: scroll;
+  height: calc(100vh - 101px);
+}
+.admin-title {
+  text-align: center;
+  font-family: var(--font-stack);
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.admin-navbar-wrapper h4 {
+  margin-bottom: .6rem;
+}
+.admin-navbar-wrapper ul {
+  margin-bottom: 1rem;
+}
+.admin-navbar-wrapper ul:last-of-type {
+  margin-bottom: 0;
+}
+.admin-card {
+  text-align: left !important;
+  padding: 2rem;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+.admin-card:last-of-type {
+  margin-bottom: 0;
+}
+.admin-card h3 {
+  font-family: var(--font-stack);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.admin-button {
+  width: auto;
+  padding: .6rem 1.4rem;
+}
+.admin-danger {
+  background-color: #ea1d02;
+}
+.admin-danger:hover {
+  background-color: #c11600;
+  color: var(--white);
+}
+.form-wrapper input {
+  all: unset;
+}
+.form-wrapper {
+  width: 100%;
+}
+.form-wrapper input[type="submit"] {
+  padding: 1rem 2rem;
+  background-color: var(--blue);
+  color: var(--white);
+  cursor: pointer;
+}
+.form-wrapper input[type="text"], .form-wrapper textarea {
+  border: 1px solid var(--blue);
+  padding: 1rem;
+  font-family: var(--font-stack);
+  color: var(--blue);
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.form-wrapper textarea {
+  resize: none;
+  height: 100px;
+}
+.form-wrapper label {
+  display: block;
+  margin-bottom: .6rem;
+}
+.form-wrapper input[type="date"],
+.form-wrapper input[type="time"] {
+  margin-bottom: 1rem;
+  display: block;
+  border: 1px solid var(--blue);
+  padding: 1rem;
+}
+.form-wrapper a[data-method="delete"] {
+  background-color: #ea1d02;
+  padding: 1rem 2rem;
+  color: var(--white);
+  cursor: pointer;
 }

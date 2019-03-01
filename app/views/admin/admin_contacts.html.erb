@@ -1,0 +1,17 @@
+<div class="admin-pannel page-wrapper">
+  <div class="admin-page-container">
+    <div class="admin-page-navigation">
+      <%= render 'layouts/partials/admin_navbar' %>
+    </div>
+    <div class="admin-page-main">
+      <h1 class="admin-title">Gérer les contact</h1>
+      <% @contacts.each do |contact| %>
+      <div class="admin-card">
+        <h3 class="admin-element-title"><%= contact.firstname %> <%= contact.lastname %></h3>
+        <%= link_to 'Modifier', edit_contact_path(contact), :class => "card-button admin-button" %>
+        <%= link_to 'Delete', contact_path(contact), method: :delete, data: {confirm: 'Es tu sûr(e) de vouloir effacer ce contact ?'}, :class => "card-button admin-button admin-danger"  %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

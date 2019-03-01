@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   root 'pages#home'
   get "pages/acces" => "pages#acces"
 
+  get "admin/dashboard" => "admin#dashboard"
+  get "admin/admin_events" => "admin#admin_events"
+  get "admin/admin_contacts" => "admin#admin_contacts"
+  get "admin/admin_accomodations" => "admin#admin_accomodations"
+  get "admin/admin_lists" => "admin#admin_lists"
+
   resources :evenements
   get 'evenements/new'
   get 'evenements/edit'

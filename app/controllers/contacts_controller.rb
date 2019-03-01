@@ -34,7 +34,7 @@ class ContactsController < ApplicationController
   def destroy
     @contact = Contact.find(params[:id])
     @contact.destroy
-    redirect_to contacts_path
+    redirect_to admin_admin_contacts_path
   end
 
   private

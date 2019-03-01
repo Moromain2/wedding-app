@@ -34,7 +34,7 @@ class ListeDeMariagesController < ApplicationController
   def destroy
     @liste_de_mariage = ListeDeMariage.find(params[:id])
     @liste_de_mariage.destroy
-    redirect_to liste_de_mariages_path
+    redirect_to admin_admin_lists_path
   end
 
   private

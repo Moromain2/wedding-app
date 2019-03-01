@@ -1,34 +1,34 @@
 <%= form_for @contact do |f| %>
+  <div class="form-wrapper">
+    <%= f.label :firstname, 'Prénom *' %><br>
+    <%= f.text_field :firstname, :required => true, placeholder: "Requis" %><br>
+    <br>
 
-  <%= f.label :firstname, 'Prénom *' %><br>
-  <%= f.text_field :firstname, :required => true, placeholder: "Requis" %><br>
-  <br>
+    <%= f.label :lastname, 'Nom' %><br>
+    <%= f.text_field :lastname, :required => false, placeholder: "Optionel" %><br>
+    <br>
 
-  <%= f.label :lastname, 'Nom' %><br>
-  <%= f.text_field :lastname, :required => false, placeholder: "Optionel" %><br>
-  <br>
+    <%= f.label :avatar, 'Photo *' %><br>
+    <%= f.file_field :avatar, :required => true, placeholder: "Requis" %><br>
+    <br>
 
-  <%= f.label :avatar, 'Photo *' %><br>
-  <%= f.file_field :avatar, :required => true, placeholder: "Requis" %><br>
-  <br>
+    <%= f.label :role, 'Rôle *' %><br>
+    <%= f.text_field :role, :required => true, placeholder: "Requis" %><br>
+    <br>
 
-  <%= f.label :role, 'Rôle *' %><br>
-  <%= f.text_field :role, :required => true, placeholder: "Requis" %><br>
-  <br>
+    <%= f.label :phonenumber, 'Numéro de téléphone *' %><br>
+    <%= f.text_field :phonenumber, :required => true, placeholder: "Requis" %><br>
 
-  <%= f.label :phonenumber, 'Numéro de téléphone *' %><br>
-  <%= f.text_field :phonenumber, :required => true, placeholder: "Requis" %><br>
+    <%= f.label :email, 'Email' %><br>
+    <%= f.text_field :email, :required => false, placeholder: "Optionel" %><br>
+    <br>
 
-  <%= f.label :email, 'Email' %><br>
-  <%= f.text_field :email, :required => false, placeholder: "Optionel" %><br>
-  <br>
-
-  <% if current_page?(action: 'new') %>
-    <%= f.submit 'Ajouter' %>
-  <% end %>
-  <% if current_page?(action: 'edit') %>
-    <%= f.submit 'Mettre à Jour' %>
-    <%= link_to 'Effacer', @contact, method: :delete, data: {confirm: 'Veux tu vraiment effacer ce contact ?'} %>
-  <% end %>
-
+    <% if current_page?(action: 'new') %>
+      <%= f.submit 'Ajouter' %>
+    <% end %>
+    <% if current_page?(action: 'edit') %>
+      <%= f.submit 'Mettre à Jour' %>
+      <%= link_to 'Effacer', @contact, method: :delete, data: {confirm: 'Veux tu vraiment effacer ce contact ?'} %>
+    <% end %>
+  </div>
 <% end %>

@@ -1,23 +1,23 @@
 <%= form_for @liste_de_mariage do |f| %>
+  <div class="form-wrapper">
+    <%= f.label :title, 'Nom *' %><br>
+    <%= f.text_field :title, :required => true, placeholder: "Requis" %><br>
+    <br>
 
-  <%= f.label :title, 'Nom *' %><br>
-  <%= f.text_field :title, :required => true, placeholder: "Requis" %><br>
-  <br>
+    <%= f.label :link, 'Lien *' %><br>
+    <%= f.text_field :link, :required => true, placeholder: "Requis - https://siteweb.com" %><br>
+    <br>
 
-  <%= f.label :link, 'Lien *' %><br>
-  <%= f.text_field :link, :required => true, placeholder: "Requis - https://siteweb.com" %><br>
-  <br>
+    <%= f.label :description, 'Description' %><br>
+    <%= f.text_area :description, :required => false, placeholder: "Optionel" %><br>
+    <br>
 
-  <%= f.label :description, 'Description' %><br>
-  <%= f.text_area :description, :required => false, placeholder: "Optionel" %><br>
-  <br>
-
-  <% if current_page?(action: 'new') %>
-    <%= f.submit 'Ajouter' %>
-  <% end %>
-  <% if current_page?(action: 'edit') %>
-    <%= f.submit 'Mettre à Jour' %>
-    <%= link_to 'Effacer', @liste_de_mariage, method: :delete, data: {confirm: 'Veux tu vraiment effacer ce lien ?'} %>
-  <% end %>
-
+    <% if current_page?(action: 'new') %>
+      <%= f.submit 'Ajouter' %>
+    <% end %>
+    <% if current_page?(action: 'edit') %>
+      <%= f.submit 'Mettre à Jour' %>
+      <%= link_to 'Effacer', @liste_de_mariage, method: :delete, data: {confirm: 'Veux tu vraiment effacer ce lien ?'} %>
+    <% end %>
+  </div>
 <% end %>

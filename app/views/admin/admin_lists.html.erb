@@ -1,0 +1,17 @@
+<div class="admin-pannel page-wrapper">
+  <div class="admin-page-container">
+    <div class="admin-page-navigation">
+      <%= render 'layouts/partials/admin_navbar' %>
+    </div>
+    <div class="admin-page-main">
+      <h1 class="admin-title">Gérer les listes de mariage</h1>
+      <% @liste_de_mariages.each do |liste| %>
+      <div class="admin-card">
+        <h3 class="admin-element-title"><%= liste.title %> </h3>
+        <%= link_to 'Modifier', edit_liste_de_mariage_path(liste), :class => "card-button admin-button" %>
+        <%= link_to 'Delete', liste_de_mariage_path(liste), method: :delete, data: {confirm: 'Es tu sûr(e) de vouloir effacer cette liste ?'}, :class => "card-button admin-button admin-danger"  %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

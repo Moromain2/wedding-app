@@ -38,7 +38,7 @@ class HebergementsController < ApplicationController
   def destroy
     @hebergement = Hebergement.find(params[:id])
     @hebergement.destroy
-    redirect_to hebergements_path
+    redirect_to admin_admin_accomodations_path
   end
 
   private
