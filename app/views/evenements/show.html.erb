@@ -8,6 +8,12 @@
       <p><%= @evenement.description %></p>
     </div>
     <%= link_to 'Retour à la liste des évènements', evenements_path, :class => 'section-button button-dark' %>
+
+    <% if admin_signed_in? %>
+    <div class="show-admin-links">
+      <%= link_to 'Modifier', edit_evenement_path(@evenement), :class => 'card-button admin-button' %>
+    </div>
+    <% end %>
   </section>
 
 </div>

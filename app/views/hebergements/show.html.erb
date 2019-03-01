@@ -18,6 +18,13 @@
       <% end %>
     </div>
     <%= link_to "Retour aux autres hébergements", hebergements_path, :class => 'page-button button-dark' %>
+
+    <% if admin_signed_in? %>
+    <div class="show-admin-links">
+      <%= link_to 'Modifier', edit_hebergement_path(@hebergement), :class => 'card-button admin-button' %>
+    </div>
+    <% end %>
+
   </section>
 
 </div>

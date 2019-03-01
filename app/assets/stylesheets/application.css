@@ -618,6 +618,7 @@ div[class$="-card"] {
   margin-bottom: 1rem;
 }
 .admin-button {
+  background-color: var(--light-blue);
   width: auto;
   padding: .6rem 1.4rem;
 }
@@ -698,4 +699,7 @@ div[class$="-card"] {
   font-size: 1rem;
   font-family: var(--font-stack);
   margin: 1rem auto;
+}
+.show-admin-links {
+  margin-top: 1rem;
 }

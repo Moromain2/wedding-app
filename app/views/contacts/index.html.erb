@@ -18,6 +18,11 @@
         <% if contact.email? %>
           <%= mail_to "#{contact.email}", "Envoyer un mail à #{contact.firstname}", :class => 'card-button' %>
         <% end %>
+        <% if admin_signed_in? %>
+        <div class="show-admin-links">
+          <%= link_to 'Modifier', edit_contact_path(contact), :class => 'card-button admin-button' %>
+        </div>
+        <% end %>
       </div>
       <% end %>
     </div>
