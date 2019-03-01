@@ -566,7 +566,7 @@ div[class$="-card"] {
 
 /* ===== Admin Page ===== */
 .admin-pannel.page-wrapper {
-  margin-top: 101px;
+  margin-top: 45px;
 }
 .admin-page-container {
   display: flex;
@@ -702,4 +702,163 @@ div[class$="-card"] {
 }
 .show-admin-links {
   margin-top: 1rem;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 799px) {
+  .navbar-wrapper {
+    display: none;
+  }
+  .mobile-menu {
+    width: 100%;
+    height: calc(100vh - 44.19px);
+    background-color: var(--pink);
+    color: var(--blue);
+    position: fixed;
+    z-index: 3;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    transition: var(--transition);
+    top: -100vh;
+  }
+  .mobile-menu h1 {
+    font-family: var(--font-stack);
+    margin-bottom: 2rem;
+  }
+  .mobile-menu nav ul li {
+    margin-bottom: 1.4rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  .mobile-menu.active {
+    top: 44.19px;
+  }
+  .mobile-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: .6rem 5%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--blue);
+    z-index: 4;
+  }
+  .page-wrapper {
+    margin-top: calc(44.19px + 2rem); /* Change to fit the navabar height */
+  }
+  .admin-pannel.page-wrapper {
+    margin-top: 44.19px;
+  }
+  .admin-page-navigation {
+    height: calc(100vh - 44.19px);
+  }
+  .admin-page-main {
+    width: 75%;
+    padding: 2rem 1rem;
+    overflow: scroll;
+    height: calc(100vh - 44.19px);
+  }
+  .mobile-navbar-logo h1 {
+    font-family: var(--font-stack);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+  .mobile-menu-icon button {
+    all: unset;
+    font-family: var(--font-stack);
+    color: var(--blue);
+    text-transform: uppercase;
+  }
+  .section-button {
+    width: 60%;
+  }
+  .hero-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .hero-card {
+    margin-right: 0;
+    margin-bottom: -5rem;
+    min-width: 80%;
+  }
+  .hero-image-container {
+    width: 100%;
+  }
+  .accomodation-cards-container {
+    grid-template-columns: 1fr;
+  }
+  .planning-cards-container {
+    flex-direction: column;
+  }
+  .planning-card {
+    width: 100%;
+    margin-bottom: 1rem,
+  }
+  .planning-card:last-of-type {
+    margin-bottom: 0,
+  }
+  .contact-cards-container {
+    grid-template-columns: 1fr;
+  }
+  .acces-informations {
+    flex-direction: column;
+  }
+  .acces-informations-body,
+  .acces-informations-map {
+    width: 100%;
+  }
+  .acces-informations-body {
+    margin-bottom: 1rem;
+  }
+  .footer-content {
+    flex-direction: column;
+  }
+  .footer-content div {
+    text-align: center;
+    width: 100%;
+  }
+  .site-map nav ul li {
+    list-style-type: none;
+    margin-left: 0;
+    margin-bottom: .5rem;
+  }
+  .site-map,
+  .contact-info {
+    margin-bottom: 1rem;
+  }
+  .airports-access-container {
+    flex-direction: column;
+  }
+  .airport-container {
+    width: 100%;
+  }
+  .airport-container:first-of-type {
+    margin-bottom: 2rem;
+  }
+  .event-cards-container {
+    grid-template-columns: 1fr;
+  }
+  .list-cards-container {
+    width: 100%;
+  }
+  .admin-page-container {
+    flex-direction: column;
+  }
+  .admin-page-main,
+  .admin-page-navigation {
+    width: 100%;
+    height: auto;
+  }
+  .admin-navbar-wrapper {
+    text-align: center;
+  }
+  .admin-card {
+    width: 100%;
+  }
 }

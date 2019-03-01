@@ -17,3 +17,28 @@
     </div>
   </div>
 </div>
+
+<div class="mobile-navbar">
+  <div class="mobile-navbar-logo">
+      <h1><%= link_to root_path do %>Camille <span>&</span> Antoine<% end %></h1>
+  </div>
+  <div class="mobile-menu-icon">
+    <button>Menu</button>
+  </div>
+</div>
+
+<div class="mobile-menu">
+  <div>
+    <h1>Menu</h1>
+    <nav>
+      <ul>
+        <li><%= link_to 'Accueil', root_path, :class => current_class?(root_path), :class => 'mobile-menu-link' %></li>
+        <li><%= link_to 'Accès', pages_acces_path, :class => current_class?(pages_acces_path), :class => 'mobile-menu-link' %></li>
+        <li><%= link_to 'Hébergement', hebergements_path, :class => current_class?(hebergements_path), :class => 'mobile-menu-link' %></li>
+        <li><%= link_to 'Programme', evenements_path, :class => current_class?(evenements_path), :class => 'mobile-menu-link' %></li>
+        <li><%= link_to 'Liste de mariage', liste_de_mariages_path, :class => current_class?(liste_de_mariages_path), :class => 'mobile-menu-link' %></li>
+        <li><%= link_to 'Contacts', contacts_path, :class => current_class?(contacts_path), :class => 'mobile-menu-link' %></li>
+      </ul>
+    </nav>
+  </div>
+</div>

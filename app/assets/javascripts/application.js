@@ -14,3 +14,18 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+window.onload = function() {
+  var burgerIcon = document.querySelector('.mobile-menu-icon');
+  var mobileMenu = document.querySelector('.mobile-menu');
+  var mobileMenuLink = document.querySelectorAll('.mobile-menu-link');
+
+  toggleMobileMenu = function() {
+    mobileMenu.classList.toggle('active');
+  }
+  burgerIcon.onclick = toggleMobileMenu;
+
+  mobileMenuLink.forEach(function(link) {
+    link.onclick = toggleMobileMenu;
+  })
+}
