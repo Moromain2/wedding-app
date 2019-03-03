@@ -295,6 +295,9 @@ div[class$="-card"] {
 .acces-informations-body ul {
   margin-bottom: 1rem;
 }
+.acces-informations-body ul:last-of-type {
+  margin-bottom: 0;
+}
 .acces-informations-body ul li {
   list-style-type: circle;
   margin-left: 1rem;
