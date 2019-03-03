@@ -170,6 +170,9 @@ div[class$="-card"] {
 .navbar-links nav ul li a:hover::after, .navbar-links nav ul li a.active::after {
   width: 100%;
 }
+.mobile-menu {
+  display: none;
+}
 
 /* ===== Hero Section ===== */
 .hero-container {
@@ -768,6 +771,10 @@ div[class$="-card"] {
     text-transform: uppercase;
     font-size: 1.2rem;
   }
+  .mobile-navbar-logo h1 span {
+    font-family: 'Garamond Bold', 'Times New Roman', serif;
+    color: var(--pink);
+  }
   .mobile-menu-icon button {
     all: unset;
     font-family: var(--font-stack);
@@ -860,5 +867,25 @@ div[class$="-card"] {
   }
   .admin-card {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 649px) {
+  .login-form-card {
+    width: 90%;
+  }
+  .section-button {
+    width: 100%;
+  }
+  .hero-card {
+    width: 95%;
+    margin-bottom: -8rem;
+  }
+  .list-card-image {
+    margin-right: 1rem;
+  }
+  .page-button {
+    margin-right: 0;
+    margin-bottom: 1rem;
   }
 }

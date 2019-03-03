@@ -12,20 +12,22 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 
 window.onload = function() {
-  var burgerIcon = document.querySelector('.mobile-menu-icon');
+  var burgerIcon = document.querySelectorAll('.mobile-menu-icon');
   var mobileMenu = document.querySelector('.mobile-menu');
-  var mobileMenuLink = document.querySelectorAll('.mobile-menu-link');
+  var mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
 
   toggleMobileMenu = function() {
+    console.log(burgerIcon);
     mobileMenu.classList.toggle('active');
   }
-  burgerIcon.onclick = toggleMobileMenu;
+  burgerIcon.forEach(function(icon) {
+    icon.onclick = toggleMobileMenu;
+  });
 
-  mobileMenuLink.forEach(function(link) {
+  mobileMenuLinks.forEach(function(link) {
     link.onclick = toggleMobileMenu;
-  })
+  });
 }
