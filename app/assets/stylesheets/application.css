@@ -127,6 +127,9 @@ div[class$="-card"] {
 
 
 /* ===== Navbar ===== */
+.mobile-menu {
+  display: none;
+}
 .navbar-container, .navbar-logo, .navbar-links {
   width: 100%;
 }
