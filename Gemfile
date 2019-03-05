@@ -36,3 +36,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Authentification
 gem 'devise'
+
+# Image storage
+gem "aws-sdk-s3"
