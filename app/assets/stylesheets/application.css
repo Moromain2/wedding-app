@@ -124,6 +124,11 @@ div[class$="-card"] {
   background-color: var(--blue);
   color: var(--white);
 }
+.link {
+  text-decoration: underline;
+  padding: .4rem 0;
+  display: inline-block;
+}
 
 
 /* ===== Navbar ===== */
@@ -306,6 +311,9 @@ div[class$="-card"] {
   width: 100%;
   height: 300px;
   box-shadow: var(--shadow);
+}
+.carpool-container {
+  padding: 4rem 5%;
 }
 
 /* ===== Contacts Section ===== */
