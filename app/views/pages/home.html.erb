@@ -67,11 +67,8 @@
     <h1 class="section-header">Contacts utiles</h1>
     <div class="contact-cards-container">
     <% if @contacts.any? %>
-      <% @contacts.last(3).each do |contact| %>
+      <% @contacts.last(4).each do |contact| %>
         <div class="contact-card">
-          <div class="avatar-container">
-            <%= image_tag(contact.avatar) %>
-          </div>
           <h3 class="card-header"><%= contact.firstname %> <%= contact.lastname %></h3>
           <h5><%= contact.role %></h5>
           <%= link_to "Appeler", "tel:#{contact.phonenumber}", :class => 'card-button' %>

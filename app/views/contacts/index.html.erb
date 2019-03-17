@@ -7,11 +7,6 @@
     <div class="contact-cards-container">
       <% @contacts.each do |contact| %>
       <div class="contact-card">
-        <% if contact.avatar.attached? %>
-        <div class="avatar-container">
-          <%= image_tag(contact.avatar) %>
-        </div>
-        <% end %>
         <h2 class="card-header"><%= contact.firstname %> <%= contact.lastname %></h2>
         <p class="contact-role"><%= contact.role %></p>
         <%= link_to "#{contact.phonenumber}", "tel:#{contact.phonenumber}", :class => 'card-button' %>

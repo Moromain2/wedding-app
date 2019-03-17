@@ -503,7 +503,7 @@ div[class$="-card"] {
 /* ===== Contacts Page ===== */
 .contact-cards-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto auto auto;
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
