@@ -543,11 +543,11 @@ div[class$="-card"] {
   font-family: var(--font-stack);
 }
 .list-card-image {
-  width: 3rem;
-  margin-right: 3rem;
+  min-width: 3rem;
+  margin-right: 2rem;
 }
 .list-card-image img {
-  width: 100%;
+  min-width: 100%;
   height: auto;
 }
 
