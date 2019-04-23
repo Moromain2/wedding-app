@@ -2,10 +2,12 @@
 
   <section id="wedding-list-page">
     <h1 class="section-header">Liste de mariage</h1>
-    <p class="section-intro">Retrouvez les liens vers nos listes de mariage</p>
     <% if @liste_de_mariages.any? %>
+    <% @liste_de_mariages.each do |liste| %>
+      <% if liste.description? %>
+        <p class="section-intro"><%= liste.description %></p>
+      <% end %>
     <div class="list-cards-container">
-      <% @liste_de_mariages.each do |liste| %>
         <%= link_to liste.link, target: "_blank", :class => 'list-card-link' do %>
           <div class="list-card">
             <div class="list-card-image">
@@ -13,9 +15,6 @@
             </div>
             <div class="list-card-content">
               <h3><%= liste.title %></h3>
-              <% if liste.description? %>
-                <p><%= liste.description %></p>
-              <% end %>
             </div>
           </div>
         <% end %>
