@@ -13,26 +13,17 @@
         <%= image_tag('bg-image.jpg') %>
       </div>
     </div>
+    <div class="remerciements">
+      <p>Merci d'avoir contribué, par votre présence et par vos voeux, à faire de notre mariage<br>
+        une journée unique et innoubliable.</p>
+      <p class="signature">Camille & Antoine</p>
+    </div>
   </section>
 
-  <section id="accomodation">
-    <h1 class="section-header">Hébergements</h1>
-    <% if @hebergements.any? %>
-    <div class="accomodation-cards-container">
-      <% @hebergements.last(3).each do |hebergement| %>
-      <div class="accomodation-card">
-        <h2 class="card-header"><%= hebergement.title %></h2>
-        <p><%= hebergement.description %></p>
-        <%= link_to 'Réserver', hebergement_path(hebergement), :class => 'card-button' %>
-      </div>
-      <% end %>
-    </div>
-    <% else %>
-      <p>Pas encore d'hébèrgement</p>
-    <% end %>
-    <% if @hebergements.any? %>
-      <%= link_to 'Voir tous les logements', hebergements_path, :class => 'section-button button-light' %>
-    <% end %>
+  <section id="photos">
+    <h1 class="section-header">Photos</h1>
+    <p>Retrouvez toutes les photos du mariage en suivant ce lien</p>
+    <%= link_to 'Voir toutes les photos', 'https://pierrejulia.pic-time.com/-camilleantoine/gallery', :class => 'section-button button-light', :target => '_blank' %>
   </section>
 
   <section id="planning">
